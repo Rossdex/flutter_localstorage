@@ -49,6 +49,7 @@ class DirUtils implements LocalStorageImpl {
     _file = await _file.setPosition(0);
     _file = await _file.writeFrom(buffer);
     _file = await _file.truncate(buffer.length);
+    _file = await _file.unlock();
   }
 
   @override
